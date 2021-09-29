@@ -1,218 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Pigeon</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
 
-    <link rel="stylesheet" href="./build/tailwind.css" />
-    <link rel="stylesheet" href="build/styles.css" />
-  </head>
-  <body data-spy="scroll" data-target=".fixed-top" class="font-body">
-    <!-- Navigation -->
+<body class="font-maven-pro text-base">
+    <header class="absolute md:relative z-10 w-full">
+        <div class="relative md:bg-white">
+            <div class="container mx-auto px-5 sm:px-6">
+                <div class="flex justify-between items-center py-6 md:space-x-10">
+                    <div class="flex justify-start lg:w-0 lg:flex-1">
+                        <a href="./index.html">
+                            <span class="sr-only">Workflow</span>
+                            <img class="h-8 w-auto sm:h-10" src="./assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="-mr-2 -my-2 md:hidden">
+                        <button type="button"
+                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                            aria-expanded="false">
+                            <span class="sr-only">Open menu</span>
+                            <!-- Heroicon name: outline/menu -->
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="hidden md:flex space-x-10 items-center">
 
-    <div>
-      <div class="grid grid-cols-3 items-center px-12 py-8">
-        <div>
-          <a
-            class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
-            href="index.html"
-          >
-            <img src="/images/CP logo.svg" alt="alternative" class="h-6" />
-          </a>
+                        <a href="./features.html" class="text-base font-medium text-[#1C2B45] hover:text-gray-500">
+                            Features
+                        </a>
+                        <a href="./about.html" class="text-base font-medium text-[#1C2B45] hover:text-gray-500">
+                            About
+                        </a>
+                        <a href="#"
+                            class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border-2 border-[#71B8FA] hover-bg-[#71B8FA] rounded-md shadow-sm text-base font-medium text-[#1C2B45] ">
+                            Get Started
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!--
+              Mobile menu, show/hide based on mobile menu state.
+          
+              Entering: "duration-200 ease-out"
+                From: "opacity-0 scale-95"
+                To: "opacity-100 scale-100"
+              Leaving: "duration-100 ease-in"
+                From: "opacity-100 scale-100"
+                To: "opacity-0 scale-95"
+            -->
+            <div class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                    <div class="pt-5 pb-6 px-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <img class="h-8 w-auto"
+                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+                            </div>
+                            <div class="-mr-2">
+                                <button type="button"
+                                    class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                    <span class="sr-only">Close menu</span>
+                                    <!-- Heroicon name: outline/x -->
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <nav class="grid gap-y-8">
+                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                    <!-- Heroicon name: outline/chart-bar -->
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                        Analytics
+                                    </span>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                    <!-- Heroicon name: outline/cursor-click -->
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                                    </svg>
+                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                        Engagement
+                                    </span>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                    <!-- Heroicon name: outline/shield-check -->
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                        Security
+                                    </span>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                    <!-- Heroicon name: outline/view-grid -->
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                    </svg>
+                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                        Integrations
+                                    </span>
+                                </a>
+
+                                <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                    <!-- Heroicon name: outline/refresh -->
+                                    <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                    </svg>
+                                    <span class="ml-3 text-base font-medium text-gray-900">
+                                        Automations
+                                    </span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="py-6 px-5 space-y-6">
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Pricing
+                            </a>
+
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Docs
+                            </a>
+
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Help Center
+                            </a>
+
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Guides
+                            </a>
+
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Events
+                            </a>
+
+                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
+                                Security
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#"
+                                class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                                Sign up
+                            </a>
+                            <p class="mt-6 text-center text-base font-medium text-gray-500">
+                                Existing customer?
+                                <a href="#" class="text-indigo-600 hover:text-indigo-500">
+                                    Sign in
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-span-2">
-          <ul class="flex lg:gap-x-16 gap-x-8 justify-end">
-            <li>
-              <a href="#Features" class="font-semibold text-secondary"
-                >Features</a
-              >
-            </li>
-            <li>
-              <a href="#About" class="font-semibold text-secondary">About</a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="font-semibold border-2 border-blue rounded-md px-6 py-2 text-secondary hover:bg-blue hover:text-white"
-                >Get Started</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- end of navigation -->
-    <!-- Header -->
-    <header class="header py-28 md:pt-30 lg:text-left">
-      <div class="">
-        <h1
-          class="font-bold text-secondary p-10 text-center text-6xl leading-12 lg:max-w-7xl lg:mx-auto"
-        >
-          The tool that’s making it easier than ever for brands to build
-          relationships with their clients, customers and end-users.
-        </h1>
-        <div class="flex pt-10 justify-center">
-          <a
-            href="#"
-            class="font-semibold bg-violet border-blue rounded-md px-10 py-4 text-primary hover:bg-blue text-white"
-            >Get Started Now</a
-          >
-        </div>
-      </div>
-      <!-- end of container -->
+
     </header>
-    <!-- end of header -->
-    <!-- Detail1 -->
-    <div class="flex p-10 justify-center xl:ml-10">
-      <img
-        class="inline rounded-2xl"
-        src="/images/video box.jpg"
-        alt="alternative"
-      />
-    </div>
-    <!-- end of Detail1 -->
-    <!-- Detail2 -->
-    <div class="grid grid-rows-3 p-24">
-      <div class="flex justify-center">
-        <a class="" href="index.html">
-          <img src="/images/icon*.png" alt="alternative" class="h-10" />
-        </a>
-      </div>
-      <h2
-        class="p-3 font-bold text-secondary text-center text-4xl leading-10 lg:max-w-6xl lg:mx-auto"
-      >
-        Now, more than ever, brands understand the importance of building
-        authentic relationships with their customers, and the value of content
-        that’s relevant and localized.
-      </h2>
-      <p
-        class="p-3 text-secondary text-center text-2xl leading-10 lg:max-w-7xl lg:mx-auto"
-      >
-        So, how do you make that connection with individual customers when
-        you’re operating at scale, from a centralized point? And how do you make
-        it easy for your network to produce their own content without losing
-        control of quality or compromising your brand standards?
-      </p>
-    </div>
-    <!-- end of Detail2 -->
-    <!-- Conclusion -->
-    <div class="basic-5">
-      <h2
-        class="pt-10 font-bold text-white text-center text-4xl leading-10 lg:max-w-6xl lg:mx-auto"
-      >
-        The answer? You use Content Pigeon.
-      </h2>
-    </div>
-    <!-- end of Conclusion -->
-    <!-- Features -->
-    <div
-      class="cards-1 grid grid-cols-3 items-center container px-4 sm:px-8 xl:px-4"
-    >
-      <!-- Card -->
-      <div class="card">
-        <a class="card-image">
-          <img src="images/ic-network.svg" alt="alternative" />
-        </a>
-        <div class="card-body">
-          <h4 class="card-title">It’s a network</h4>
-          <p class="mb-4">
-            Content Pigeon connects Head Office (your marketing team or your
-            agency) to the social media accounts of each of your branches,
-            stores or agents.
-          </p>
+    <section class="banner relative">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="text-center lg:w-2/3 w-full">
+                <h1 class="mb-10 font-bold text-[#1C2B45] text-[52px] leading-none tracking-tight">The tool that’s
+                    making it
+                    easier than ever for <div class="focus"><span>brands to build relationships </span></div> with their
+                    clients,
+                    customers and
+                    end-users.</h1>
+                <div class="flex justify-center">
+                    <button class="btn btn-primary">Get
+                        Started Now</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- end of card -->
+        <div class="hidden md:block">
 
-      <!-- Card -->
-      <div class="card">
-        <a class="card-image">
-          <img src="images/ic-schedulingtool.svg" alt="alternative" />
-        </a>
-        <div class="card-body">
-          <h4 class="card-title">It’s a scheduling tool</h4>
-          <p class="mb-4">
-            Create brand messaging and publish it to all (or some) of your
-            network with the click of a button.
-          </p>
-        </div>
-      </div>
-      <!-- end of card -->
 
-      <!-- Card -->
-      <div class="card">
-        <a class="card-image">
-          <img src="images/ic-assetlibrary.svg" alt="alternative" />
-        </a>
-        <div class="card-body">
-          <h4 class="card-title">It’s an asset library</h4>
-          <p class="mb-4">
-            Upload pre-approved templates so your branches can create their own
-            locally-relevant, on-brand content.
-          </p>
+            <div class="absolute top-0 left-0"><img src="./assets/images/icons/shape/shape-1.svg" alt=""></div>
+            <div class="absolute bottom-[100px] left-0"><img src="./assets/images/icons/shape/shape-2.svg" alt=""></div>
+            <div class="absolute top-0 right-[80px]"><img src="./assets/images/icons/shape/shape-3.svg" alt=""></div>
+            <div class="absolute top-[100px] right-[0]"><img src="./assets/images/icons/shape/shape-4.svg" alt=""></div>
+            <div class="absolute bottom-[0] right-[80px]"><img src="./assets/images/icons/shape/shape-5.svg" alt="">
+            </div>
+            <div class="absolute top-[100px] left-[100px]"><img src="./assets/images/icons/shape/shape-6.svg" alt="">
+            </div>
         </div>
-      </div>
-      <!-- end of card -->
-    </div>
-    <!-- end of Features -->
-    <!-- Features Info-->
-    <div class="bg-background bg-cover pt-30 pb-30">
-      <div class="container grid grid-cols-2">
-        <div class="pt-10">
-          <a class="card-image">
-            <img src="images/Asset 1@2x 1.png" alt="alternative" />
-          </a>
+    </section>
+    <section class="bg-gray-100 pb-32">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <div class="bg"></div>
+            <div class="mb-20 embed-responsive shadow-2xl rounded-2xl bg-white">
+                <div class="embed-responsive-16by9"></div>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ThiCMd5kGbE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <img src="./assets/images/icons/ic-asterisk.svg" alt="" class="mx-auto">
+            <h2 class="text-[40px] leading-[40px] font-bold my-10">Now, more than ever, brands understand the importance
+                of
+                building
+                authentic
+                relationships with their
+                customers, and the value of content that’s relevant and localized.</h2>
+            <p class="text-[#1C2B45]">So, <strong>how</strong> do you make that connection with individual customers
+                when you’re operating at scale, from a
+                centralized point? And <strong>how</strong> do you make it easy for your network to produce their own
+                content without
+                losing control of quality or compromising your brand standards?</p>
+        </div>
+    </section>
+    <section class="atc">
+        <div class="container mx-auto px-5 py-24">
+            <h4 class="text-[53px] text-white leading-[58px] text-center font-bold">The answer? You use Content Pigeon.
+            </h4>
+        </div>
+    </section>
+    <section class="py-20">
+        <div class="container mx-auto px-5">
+            <div class="grid sm:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="./assets/images/icons/ic-network.svg" alt="" class="mx-auto">
+                    <h3 class="text-[28px] text-[#1C2B45] tracking-tight font-bold m-5">It’s a <div class="focus">
+                            <span>network</span>
+                        </div>
+                    </h3>
+                    <p>Content Pigeon connects Head Office (your marketing team or your agency) to the social media
+                        accounts of each of your branches, stores or agents.</p>
+                </div>
+                <div class="text-center">
+                    <img src="./assets/images/icons/ic-network.svg" alt="" class="mx-auto">
+                    <h3 class="text-[28px] text-[#1C2B45] tracking-tight font-bold m-5">It’s a <div class="focus">
+                            <span>scheduling tool</span>
+                        </div>
+                    </h3>
+                    <p>Create brand messaging and publish it to all (or some) of your network with the click of a
+                        button.</p>
+                </div>
+                <div class="text-center">
+                    <img src="./assets/images/icons/ic-network.svg" alt="" class="mx-auto">
+                    <h3 class="text-[28px] text-[#1C2B45] tracking-tight font-bold m-5">It’s an <div class="focus">
+                            <span>asset library </span>
+                        </div>
+                    </h3>
+                    <p>Upload pre-approved templates so your branches can create their own locally-relevant, on-brand
+                        content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-[#F3F4F6] py-10">
+        <div class="container mx-auto px-5">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="./assets/images/other/asset-1.png" alt="" class="mx-auto">
+                </div>
+                <div>
+                    <header>
+                        <h2 class="main-title">And it’s <div class="focus">
+                                <span>total
+                                    controlover</span>
+                            </div> your content</h2>
+                    </header>
+                    <div>
+                        <p class="my-6">Approval settings allow you to check, edit or reject all posts from your team
+                            before they go
+                            live, while insightful data feeds give you an in-depth understanding of the performance of
+                            your
+                            content across your entire network.</p>
+                        <div class="btn btn-outline">Features info</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-5">
+            <header class="max-w-5xl mx-auto text-center">
+                <h2 class="main-title mb-5">Ideal for franchises and chains</h2>
+                <p class="text-[18px] text-[#1C2B45] leading-[28px]">Content Pigeon is built for any chain, franchise or
+                    business wanting to deliver a blend of
+                    consistent, top-line brand messaging and locally-specific (but definitely still on-brand) content.
+                    We work with everyone from businesses with 2-3 locations nationally, to those with hundreds of sites
+                    across multiple countries.</p>
+            </header>
+            <div class="py-10">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-10">
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-1.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Real estate companies</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-2.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Supermarket chains</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-3.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Health and fitness businesses</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-4.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Hair and beauty businesses</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-5.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Home build companies</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-6.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Eateries and hospitality</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-7.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Finance and insurance brokers</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-8.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Vehicle dealerships</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-9.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Retail chains</span>
+                    </div>
+                    <div class="ideas__item">
+                        <div class="ideas__img">
+                            <img src="./assets/images/icons/ic-franchises-10.svg" alt="" class="mx-auto">
+                        </div>
+                        <span class="ideas__title">Marketing and comms agencies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-[#F3F4F6] py-20">
+        <div class="max-w-7xl mx-auto px-5">
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-[35px] text-[#1C2B45] font-bold text-center">Brands that love Content Pigeon</h2>
+                    <div class="grid grid-cols-2 gap-8 p-10">
+                        <div class="text-center flex items-center justify-center">
+                            <img src="./assets/images/partners/brands-mikepero.png" alt="" class="w-[150px]">
+                        </div>
+                        <div class="text-center flex items-center justify-center">
+                            <img src="./assets/images/partners/brands-anytimefitness.png" alt="" class="w-[150px]">
+                        </div>
+                        <div class="text-center flex items-center justify-center">
+                            <img src="./assets/images/partners/brands-freshchoice.png" alt="" class="w-[150px]">
+                        </div>
+                        <div class="text-center flex items-center justify-center">
+                            <img src="./assets/images/partners/brands-hunting&fishing.png" alt="" class="w-[150px]">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="embed-responsive shadow-2xl rounded-2xl bg-white">
+                        <div class="embed-responsive-16by9"></div>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ThiCMd5kGbE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-white body-font bg-[#1C2B45] ">
+        <div class="py-5 md:py-7 lg:py-16">
+            <div class="max-w-6xl mx-auto px-5 ">
+                <div class="text-center">
+                    <p class="font-bold mx-auto text-white md:text-[35px] leading-[40px]">Ready to take control
+                        of your brand’s online presence?</p>
+                    <a href="#" class="btn btn-secondary mt-10">Get Started Now</a>
+                </div>
+            </div>
         </div>
         <div>
-          <div class="pt-36">
-            <h2 class="text-secondary">And it’s total controlover your content</h2>
-          </div>
-          <div class="pt-4">
-            <p class="text-secondary">
-              Approval settings allow you to check, edit or reject all posts
-              from your team before they go live, while insightful data feeds
-              give you an in-depth understanding of the performance of your
-              content across your entire network.
-            </p>
-          </div>
-          <div class="pt-5">
-            <a
-              href="#Features"
-              class="font-semibold border-2 border-violet rounded-md px-6 py-2 text-secondary hover:bg-violet hover:text-white"
-              >Features info</a
-            >
-          </div>
+            <div class="container px-5 py-6 mx-auto flex items-center justify-between sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="./assets/images/logo-white.svg" alt="">
+                </a>
+                <p class="text-sm text-white sm:mt-0 mt-4">© Copyright 2021 Content Pigeon Ltd | All rights
+                    reserved.</p>
+                <div class="inline-flex sm:mt-0 mt-4">
+                    <a class="text-gray-500"><svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500"><svg fill="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500"><svg fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500"><svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- end of Features Info -->
-    <!-- Ideal-->
-    <div class="container">
-      <div class="pt-36 items-center text-center text-secondary">
-        <h2>Ideal for franchises and chains</h2>
-      </div>
-      <div>
-        <p class="p-3 text-secondary text-center text-2xl leading-10 lg:max-w-7xl lg:mx-auto">
-          Content Pigeon is built for any chain, franchise or business wanting
-          to deliver a blend of consistent, top-line brand messaging and
-          locally-specific (but definitely still on-brand) content. We work with
-          everyone from businesses with 2-3 locations nationally, to those with
-          hundreds of sites across multiple countries.
-        </p>
-      </div>
-      <div>
-        
-      </div>
-    </div>
-    <!-- end of Ideal-->
-  </body>
+    </footer>
+</body>
+
 </html>

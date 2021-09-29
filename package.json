@@ -1,26 +1,17 @@
 {
-  "name": "contect-pigeon",
+  "name": "dvi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss tailwind.source.css -o public/build/tailwind.css",
-    "dev": "vite"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com-trieu:DoVanTrieu/Contect-Pigeon.git"
+    "dev:css": "npx tailwindcss  tailwind.css -o ./assets/css/main.css --watch --minify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.3.6",
+    "autoprefixer": "^10.3.5",
     "postcss": "^8.3.8",
-    "postcss-cli": "^9.0.0",
-    "tailwindcss": "^2.2.16"
-  },
-  "dependencies": {
-    "vite": "^2.5.10"
+    "tailwindcss": "^2.2.15"
   }
 }
